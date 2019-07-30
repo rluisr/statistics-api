@@ -1,8 +1,7 @@
 use rocket::{State};
+use rocket_contrib::json::Json;
 use mysql;
 use mysql::{params};
-use rocket_contrib::json::Json;
-
 use crate::models::Register;
 use crate::models::Response;
 
