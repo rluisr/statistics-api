@@ -8,11 +8,12 @@ mod models;
 mod uuid;
 mod db;
 
-use crate::uuid::{UUID};
+use rocket::{State};
 use rocket_contrib::json::Json;
+
+use crate::uuid::{UUID};
 use crate::models::Register;
 use crate::models::Response;
-use rocket::{State};
 
 #[get("/")]
 fn index() -> &'static str {
