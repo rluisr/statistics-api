@@ -12,7 +12,6 @@ use rocket::{State};
 use rocket_contrib::json::Json;
 
 use crate::uuid::{UUID};
-use crate::models::Register;
 use crate::models::Response;
 
 #[get("/")]
@@ -21,7 +20,7 @@ fn index() -> &'static str {
 }
 
 #[post("/uuid", data = "<register>")]
-fn register(register: Json<Register>, connection: State<mysql::Pool>) -> Json<Response> {
+fn register(register: Json<UUID>, connection: State<mysql::Pool>) -> Json<Response> {
     Json(UUID::register(register, connection))
 }
 

@@ -2,7 +2,6 @@ use rocket::{State};
 use rocket_contrib::json::Json;
 use mysql;
 use mysql::{params};
-use crate::models::Register;
 use crate::models::Response;
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -12,7 +11,7 @@ pub struct UUID {
 }
 
 impl UUID {
-    pub fn register(uuid: Json<Register>, pool: State<mysql::Pool>) -> Response {
+    pub fn register(uuid: Json<UUID>, pool: State<mysql::Pool>) -> Response {
         let params = params!{
             "uuid" => &uuid.uuid
         };
@@ -21,11 +20,11 @@ impl UUID {
         let insert = format!("INSERT INTO {} (uuid) VALUES (:uuid)", uuid.app_name);
         let result = pool.prep_exec(insert, params);
         match result {
-            Ok(v) => response = Response {
+            Ok(_) => response = Response {
                 status: "ok".to_string(),
             },
             // Todo エラーハンドリングのやり方と、失敗したときのエラーレスポンスをちゃんとしたい
-            Err(e) => response = Response {
+            Err(_) => response = Response {
                 status: "ng".to_string(),
             }
         };

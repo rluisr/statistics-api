@@ -1,7 +1,15 @@
 use mysql;
-
-static DB_URL: &'static str = env!("DB_URL");
+use std::env;
+use std::process;
 
 pub fn connect() -> mysql::Pool {
-    mysql::Pool::new(DB_URL).unwrap();
+    let db_url = match env::var("DB_URL") {
+        Ok(val) => val,
+        Err(err) => {
+            println!("{}: {}", err, "DB_URL");
+            process::exit(1);
+        },
+    };
+
+    return mysql::Pool::new(db_url).unwrap();
 }

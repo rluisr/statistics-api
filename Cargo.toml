@@ -1,7 +1,7 @@
 [package]
-name = "srg-statistics-api"
+name = "stats-api"
 version = "0.1.0"
-authors = ["hasegawa_takuya_xa <hasegawa_takuya_xa@cyberagent.co.jp>"]
+authors = ["rluisr <detteiu.x14th@gmail.com"]
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

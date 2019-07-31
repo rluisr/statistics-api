@@ -945,18 +945,6 @@ version = "0.6.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
-name = "srg-statistics-api"
-version = "0.1.0"
-dependencies = [
- "mysql 16.0.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "rocket 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "rocket_contrib 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "serde 1.0.97 (registry+https://github.com/rust-lang/crates.io-index)",
- "serde_derive 1.0.97 (registry+https://github.com/rust-lang/crates.io-index)",
- "serde_json 1.0.40 (registry+https://github.com/rust-lang/crates.io-index)",
-]
-
-[[package]]
 name = "stackvector"
 version = "1.0.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -974,6 +962,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 name = "static_assertions"
 version = "0.2.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "stats-api"
+version = "0.1.0"
+dependencies = [
+ "mysql 16.0.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rocket 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rocket_contrib 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "serde 1.0.97 (registry+https://github.com/rust-lang/crates.io-index)",
+ "serde_derive 1.0.97 (registry+https://github.com/rust-lang/crates.io-index)",
+ "serde_json 1.0.40 (registry+https://github.com/rust-lang/crates.io-index)",
+]
 
 [[package]]
 name = "syn"
