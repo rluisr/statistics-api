@@ -32,7 +32,7 @@ items:
       template: stats-api-rust
     name: stats-api-rust
   spec:
-    host: ""
+    host: "stats-api.apps.xuu.pw"
     to:
       kind: Service
       name: stats-api-rust
