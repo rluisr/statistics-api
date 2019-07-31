@@ -30,6 +30,8 @@ items:
     labels:
       app: stats-api-rust
       template: stats-api-rust
+    annotations:
+      kubernetes.io/tls-acme: "true"
     name: stats-api-rust
   spec:
     host: "stats-api.apps.xuu.pw"
