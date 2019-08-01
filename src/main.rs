@@ -9,13 +9,19 @@ mod uuid;
 mod db;
 
 use rocket::{State};
+use rocket::response::Redirect;
 use rocket_contrib::json::Json;
 
 use crate::uuid::{UUID};
 use crate::models::Response;
 
 #[get("/")]
-fn index() -> &'static str {
+fn index() -> Redirect {
+    Redirect::to("https://github.com/rluisr/stats-api-rust")
+}
+
+#[get("/health_check")]
+fn health_check() -> &'static str {
     ":)"
 }
 
@@ -27,6 +33,6 @@ fn register(register: Json<UUID>, connection: State<mysql::Pool>) -> Json<Respon
 fn main() {
     rocket::ignite()
         .manage(db::connect())
-        .mount("/", routes![index, register])
+        .mount("/", routes![index, health_check, register])
         .launch();
 }

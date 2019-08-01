@@ -95,7 +95,7 @@ items:
             value: mysql://root:pass@localhost:3306/stats
           livenessProbe:
             httpGet:
-              path: /
+              path: /health_check
               port: 8000
             initialDelaySeconds: 10
             periodSeconds: 60
@@ -105,7 +105,7 @@ items:
           - containerPort: 8000
           readinessProbe:
             httpGet:
-              path: /
+              path: /health_check
               port: 8000
             initialDelaySeconds: 10
             periodSeconds: 60
